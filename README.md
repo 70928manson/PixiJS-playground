@@ -1,3 +1,3 @@
 # Hello world
 
-pixi.js
+pixi.js game
