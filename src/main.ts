@@ -1,9 +1,13 @@
-import { Application, Container, Text } from 'pixi.js';
+import { Application, Container, Text, Sprite } from 'pixi.js';
 import './style.css';
+import testImageUrl from './images/test.jpg';
 
 //遊戲程式進入點
 let app = new Application<HTMLCanvasElement>();
 document.body.appendChild(app.view);
+
+let sprite = Sprite.from(testImageUrl);
+app.stage.addChild(sprite);
 
 let container = new Container();
 app.stage.addChild(container);
