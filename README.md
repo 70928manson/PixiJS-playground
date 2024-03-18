@@ -1,3 +1,3 @@
-# Hello world
+# PixiJS playground
 
 pixi.js game
