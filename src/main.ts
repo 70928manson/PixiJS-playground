@@ -23,6 +23,16 @@ graphics.moveTo(200, 30);
 // 下筆畫到(300, 50)
 graphics.lineTo(300, 50);
 
+// 改變筆刷 (粗 10px / 綠色)
+graphics.lineStyle({
+    width: 10,
+    color: 0x00FF00,
+});
+// 畫圈 圓心在(100, 120) / 半徑50
+graphics.drawCircle(100, 120, 50);
+// 畫另一個圖
+graphics.drawCircle(240, 120, 50);
+
 // let sprite = Sprite.from(testImageUrl);
 // app.stage.addChild(sprite);
 
