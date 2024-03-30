@@ -33,6 +33,16 @@ graphics.drawCircle(100, 120, 50);
 // 畫另一個圖
 graphics.drawCircle(240, 120, 50);
 
+// 重置筆刷
+graphics.lineStyle();
+// 準備填色 (紫色)
+graphics.beginFill(0xFF00FF);
+// 畫方, 從(150, 200) 畫一個寬80, 高30的方形
+graphics.drawRect(150, 200, 80, 30);
+// 結束填色
+graphics.endFill();
+
+
 // let sprite = Sprite.from(testImageUrl);
 // app.stage.addChild(sprite);
 
