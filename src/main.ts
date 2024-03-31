@@ -42,6 +42,17 @@ graphics.drawRect(150, 200, 80, 30);
 // 結束填色
 graphics.endFill();
 
+// 再建一個名子叫hole的Graphics
+let hole = new Graphics();
+// 準備填黑色
+hole.beginFill(0);
+// 以(180, 120)為圓心畫個半徑100的圓
+hole.drawCircle(180, 120, 100);
+// 結束填色
+hole.endFill();
+// 將這個hole指定為graphics的遮罩
+graphics.mask = hole;
+
 
 // let sprite = Sprite.from(testImageUrl);
 // app.stage.addChild(sprite);
