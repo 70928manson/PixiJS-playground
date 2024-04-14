@@ -9,6 +9,12 @@ document.body.appendChild(app.view);
 let graphics = new Graphics();
 app.stage.addChild(graphics);
 
+// 改變畫布蓋滿整個window畫面
+app.renderer.resize(
+    window.innerWidth,  // 視窗內部不含框的寬
+    window.innerHeight  // 視窗內部不含寬的高
+);
+
 // 設定畫線的筆刷 (粗 20px 白色)
 graphics.lineStyle({
     width: 20,
