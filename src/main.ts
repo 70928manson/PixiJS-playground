@@ -6,6 +6,21 @@ import testImageUrl from './images/test.jpg';
 let app = new Application<HTMLCanvasElement>();
 document.body.appendChild(app.view);
 
+// 使用通用物件來儲存舞台的尺寸
+let stageSize = {
+    width: 0,
+    height: 0
+}
+
+// 新增一個繪圖元件來畫舞台的外框
+let stageFrame = new Graphics();
+app.stage.addChild(stageFrame);
+
+/**
+ * 重繪舞台的外框
+ */
+// .....
+
 let graphics = new Graphics();
 app.stage.addChild(graphics);
 
