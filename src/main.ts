@@ -19,7 +19,19 @@ app.stage.addChild(stageFrame);
 /**
  * 重繪舞台的外框
  */
-// .....
+function redrawStageFrame(): void {
+    stageFrame.clear();  // 清除繪圖器
+    stageFrame.lineStyle({
+        color: 0xFF0000,
+        width: 2
+    });
+    stageFrame.drawRect(
+        0,   // x
+        0,   // y
+        stageSize.width,  // 寬
+        stageSize.height  // 高
+    )
+}
 
 let graphics = new Graphics();
 app.stage.addChild(graphics);
