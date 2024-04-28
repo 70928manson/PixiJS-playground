@@ -33,6 +33,25 @@ function redrawStageFrame(): void {
     )
 }
 
+/**
+ * 重繪舞台的外框
+ */
+function setStageSize(width: number, height: number): void {
+    stageSize.width = width;
+    stageSize.height = height;
+    redrawStageFrame();
+    refreshCanvasAndStage();
+}
+
+/**
+ * 根據舞台尺寸(stageSize)與瀏覽器視窗大小
+ * 來調整app.stage的縮放與位置
+ */
+function refreshCanvasAndStage(): void {
+    // TODO........
+}
+
+
 let graphics = new Graphics();
 app.stage.addChild(graphics);
 
