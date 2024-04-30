@@ -48,9 +48,34 @@ function setStageSize(width: number, height: number): void {
  * 來調整app.stage的縮放與位置
  */
 function refreshCanvasAndStage(): void {
-    // TODO........
+    // 首先取得瀏覽器的視窗大小
+    let winSize = {
+        width: window.innerWidth,
+        height: window.innerHeight
+    };
+    // 將app裡的畫布尺寸同步到視窗大小
+    app.renderer.resize(winSize.width, winSize.height);
+    // 計算舞台最多可以放大多少倍, 才能盡量占滿視窗又不超出畫面
+    let scale = Math.min(
+        winSize.width / stageSize.width,
+        winSize.height / stageSize.height
+    );
+    // 將舞台按計算結果縮放尺寸
+    app.stage.scale.set(scale);
+    // 計畫舞台在經過縮放後的實際尺寸
+    let stageRealSize = {
+        width: stageSize.width * scale,
+        height: stageSize.height * scale,
+    };
+    // 計算並平移舞台位置, 讓舞台置中於視窗內
+    app.stage.position.set(
+        (winSize.width - stageRealSize.width) / 2,
+        (winSize.height - stageRealSize.height) / 2
+    );
 }
 
+// 設定舞台尺寸
+setStageSize(640, 480);
 
 let graphics = new Graphics();
 app.stage.addChild(graphics);
