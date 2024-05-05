@@ -1,6 +1,5 @@
-import { Application, Container, Text, Sprite, Graphics } from 'pixi.js';
+import { Application, Container, Text, Graphics } from 'pixi.js';
 import './style.css';
-import testImageUrl from './images/test.jpg';
 
 // 遊戲程式進入點
 let app = new Application<HTMLCanvasElement>();
@@ -34,7 +33,7 @@ function redrawStageFrame(): void {
 }
 
 /**
- * 重繪舞台的外框
+ * 用來指定舞台大小的function
  */
 function setStageSize(width: number, height: number): void {
     stageSize.width = width;
@@ -76,6 +75,10 @@ function refreshCanvasAndStage(): void {
 
 // 設定舞台尺寸
 setStageSize(640, 480);
+
+// 監聽視窗的resize事件
+// 再發生改變時執行refreshCanvasAndStage
+window.addEventListener('resize', refreshCanvasAndStage);
 
 let graphics = new Graphics();
 app.stage.addChild(graphics);
