@@ -80,6 +80,13 @@ setStageSize(640, 480);
 // 再發生改變時執行refreshCanvasAndStage
 window.addEventListener('resize', refreshCanvasAndStage);
 
+/**
+ * 設定外框顯示與否的函式
+ */
+export function setStageFrameVisible(visible: boolean) {
+    stageFrame.visible = visible;
+}
+
 let graphics = new Graphics();
 app.stage.addChild(graphics);
 
