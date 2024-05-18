@@ -87,6 +87,16 @@ export function setStageFrameVisible(visible: boolean) {
     stageFrame.visible = visible;
 }
 
+/**
+ * 匯出取得舞台尺寸的函式
+ */
+export function getStageSize() {
+    return {
+        width: stageSize.width,
+        height: stageSize.height 
+    }
+}
+
 let graphics = new Graphics();
 app.stage.addChild(graphics);
 
