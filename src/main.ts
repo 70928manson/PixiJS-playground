@@ -1,5 +1,6 @@
 import { Application, Container, Text, Graphics } from 'pixi.js';
 import './style.css';
+import { ArrayUtils } from './lib/ArrayUtils';
 
 // 遊戲程式進入點
 let app = new Application<HTMLCanvasElement>();
