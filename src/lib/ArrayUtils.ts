@@ -62,4 +62,20 @@ export class ArrayUtils {
 
         return item;
     };
+
+    /**
+     * 排序數字陣列
+     * @param array 目標陣列
+     * @param descending (可省略)是否要由大到小排列
+     */
+    public static sortNumeric(
+        array: number[],
+        descending?: boolean
+    ){
+        if (descending) {
+            array.sort((a, b) => b - a);
+        } else {
+            array.sort((a, b) => a - b);
+        };
+    };
 }
