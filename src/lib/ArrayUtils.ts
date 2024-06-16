@@ -78,4 +78,22 @@ export class ArrayUtils {
             array.sort((a, b) => a - b);
         };
     };
-}
+
+    /**
+     * 排序物件陣列
+     * @param array 目標陣列
+     * @param key 排序依賴屬性
+     * @param descending (可省略)是否由大到小排
+     */
+    public static sortNumericOn(
+        array: any[],
+        key: string,
+        descending?: boolean
+    ) {
+        if (descending) {
+            array.sort((a, b) => b[key] - a[key]);
+        } else {
+            array.sort((a, b) => a[key] - b[key]);
+        };
+    };
+};
