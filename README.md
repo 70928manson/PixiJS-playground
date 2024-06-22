@@ -1,3 +1,3 @@
 # PixiJS playground
 
-pixi.js game platform
+pixi.js game
