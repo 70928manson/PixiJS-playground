@@ -96,4 +96,20 @@ export class ArrayUtils {
             array.sort((a, b) => a[key] - b[key]);
         };
     };
+
+    /**
+     * 交換兩個陣列元素的位置
+     * @param array 目標陣列
+     * @param index1 第一個元素位置
+     * @param index2 第二個元素位置
+     */
+    public static swapAt(
+        array: unknown[],
+        index1: number,
+        index2: number
+    ) {
+        let element1 = array[index1];
+        array[index1] = array[index2];
+        array[index2] = element1;
+    };
 };
