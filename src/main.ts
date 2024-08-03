@@ -182,3 +182,7 @@ while (nums.length < 6) {
     nums.push(number);
 }
 console.log(nums);
+
+// 模擬系統內建亂數器
+let rng1 = new RandomGenerator(Date.now());
+console.log("rng1", rng1);
