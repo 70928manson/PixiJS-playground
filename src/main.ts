@@ -1,6 +1,7 @@
 import { Application, Container, Text, Graphics } from 'pixi.js';
 import './style.css';
 import { ArrayUtils } from './lib/ArrayUtils';
+import { RandomGenerator } from './lib/RandomGenerator';
 
 // 遊戲程式進入點
 let app = new Application<HTMLCanvasElement>();
@@ -170,3 +171,14 @@ container.addChild(text2);
 text1.position.set(100, 50);
 text2.position.set(100, 100);
 container.angle = 15;
+
+// 建立一個使用預設種子的亂數產生器
+let rng = new RandomGenerator();
+// 宣告一個數字陣列
+let nums: number[] = [];
+// 在陣列中放入6個介於0~10的亂數
+while (nums.length < 6) {
+    let number = Math.floor(rng.next() * 10);
+    nums.push(number);
+}
+console.log(nums);
