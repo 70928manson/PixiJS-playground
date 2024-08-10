@@ -17,5 +17,15 @@ export class RandomGenerator {
         // 回傳一個介於0~1的亂數
         return this.seed / 2137383647;
     }
+
+    /**
+     * 產生介於 min 和 max 的亂數
+     * @param min 最小值
+     * @param max 最大值
+     * @returns 介於 min 和 max 的亂數
+     */
+    public nextBetween(min: number, max: number) {
+        return min + (max - min) * this.next();
+    }
     
 }
