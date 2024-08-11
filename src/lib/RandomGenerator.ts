@@ -28,4 +28,13 @@ export class RandomGenerator {
         return min + (max - min) * this.next();
     }
     
+    /**
+     * 產生介於 0 和 max 之間的亂整數, 0 和 max 都是可能的回傳值
+     * @params max 最大可能值
+     * @returns 介於 0 和 max 的亂整數
+     */
+    public nextInt(max: number): number {
+        let value = (max + 1) * this.next();
+        return Math.floor(value);
+    }
 }
