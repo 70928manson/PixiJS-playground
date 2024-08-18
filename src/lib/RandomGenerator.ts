@@ -30,11 +30,22 @@ export class RandomGenerator {
     
     /**
      * 產生介於 0 和 max 之間的亂整數, 0 和 max 都是可能的回傳值
-     * @params max 最大可能值
+     * @param max 最大可能值
      * @returns 介於 0 和 max 的亂整數
      */
     public nextInt(max: number): number {
         let value = (max + 1) * this.next();
+        return Math.floor(value);
+    }
+
+    /**
+     * 產生介於 min 和 max 之間的亂整數, min 和 max 都是可能的回傳值
+     * @param min 最小可能值
+     * @param max 最大可能值
+     * @returns 介於 min 和 max 的亂整數
+     */
+    public nextIntBetween(min:number, max: number): number {
+        let value = min + (max - min + 1) * this.next();
         return Math.floor(value);
     }
 }
