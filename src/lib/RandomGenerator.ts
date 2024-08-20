@@ -48,4 +48,24 @@ export class RandomGenerator {
         let value = min + (max - min + 1) * this.next();
         return Math.floor(value);
     }
+    
+    /**
+     * 產生一個長度為 length 的隨機字串
+     * @param length 回傳的字串長度
+     * @param nums 是否要加入數字
+     * @returns 隨機字串
+     */
+    public getRandomString(length:number, nums?: boolean): string {
+        let chars = 'abcdefghijklmnopqrstuvwxyz';
+        if (nums) {
+            chars += '0123456789';
+        };
+        let charLength = chars.length;
+        let output = '';
+        while (output.length < length) {
+            let index = Math.floor(charLength * this.next());
+            output += chars[index];
+        };
+        return output
+    }
 }
