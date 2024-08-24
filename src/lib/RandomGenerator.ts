@@ -1,3 +1,5 @@
+import { ArrayUtils } from "./ArrayUtils";
+
 export class RandomGenerator {
     /** 建構子要給一個亂數種子, 預設為1 */
     constructor(public seed: number = 1) {
@@ -67,5 +69,17 @@ export class RandomGenerator {
             output += chars[index];
         };
         return output
+    }
+
+    /**
+     * 隨機排列陣列中的元素
+     * @param array 目標陣列
+     */
+    public randomizeArray(array: unknown[]) {
+        let length = array.length;
+        for (let i = 0; i < length; i++) {
+            let swapTo = Math.floor(length * this.next());
+            ArrayUtils.swapAt(array, i, swapTo);
+        }
     }
 }
