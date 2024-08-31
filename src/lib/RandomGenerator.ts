@@ -82,4 +82,22 @@ export class RandomGenerator {
             ArrayUtils.swapAt(array, i, swapTo);
         }
     }
+
+    /**
+     * 從陣列中隨機取一個元素
+     * @param array 目標陣列
+     * @param remove (可省略) 要不要移除選到的元素
+     * @returns 隨機選取的元素
+     */
+    public getArrayRandomItem<T>(array: T[], remove: boolean): T {
+        if (!array.length) {
+            throw new Error('無法從空陣列取出元素');
+        };
+        let index = Math.floor(array.length * this.next());
+        let item = array[index];
+        if (remove) {
+            array.splice(index, 1);
+        };
+        return item;
+    }
 }
